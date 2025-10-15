@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Horario - Gym Aurora</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="assets/logo.svg" alt="Gym Aurora" />
+      <h1>Gym Aurora</h1>
+    </div>
+    <button id="downloadBtn">Descargar horario PDF</button>
+  </header>
+
+  <main>
+    <aside>
+      <h2>Clases</h2>
+      <label for="filter">Filtrar por tipo</label>
+      <select id="filter">
+        <option value="Todas">Todas</option>
+        <option value="Cumba">Cumba</option>
+        <option value="Cycling">Cycling</option>
+        <option value="Yoga">Yoga</option>
+        <option value="Pilates">Pilates</option>
+        <option value="HIIT">HIIT</option>
+      </select>
+
+      <h3>Agregar clase</h3>
+      <form id="addForm">
+        <input type="text" id="name" placeholder="Nombre de la clase" required />
+        <select id="day" required>
+          <option value="">Seleccionar día</option>
+          <option value="Lunes">Lunes</option>
+          <option value="Martes">Martes</option>
+          <option value="Miércoles">Miércoles</option>
+          <option value="Jueves">Jueves</option>
+          <option value="Viernes">Viernes</option>
+          <option value="Sábado">Sábado</option>
+        </select>
+        <select id="hour" required>
+          <option value="">Seleccionar hora</option>
+          <option value="06:00">06:00</option>
+          <option value="08:00">08:00</option>
+          <option value="10:00">10:00</option>
+          <option value="14:00">14:00</option>
+          <option value="16:00">16:00</option>
+          <option value="18:00">18:00</option>
+          <option value="20:00">20:00</option>
+        </select>
+        <select id="type" required>
+          <option value="Cumba">Cumba</option>
+          <option value="Cycling">Cycling</option>
+          <option value="Yoga">Yoga</option>
+          <option value="Pilates">Pilates</option>
+          <option value="HIIT">HIIT</option>
+        </select>
+        <button type="submit">Agregar</button>
+      </form>
+    </aside>
+
+    <section id="schedule">
+      <h2>Horario semanal</h2>
+      <div id="classes"></div>
+    </section>
+  </main>
+
+  <div id="editModal" class="modal hidden">
+    <div class="modal-content">
+      <h3>Editar clase</h3>
+      <form id="editForm">
+        <input type="text" id="editName" placeholder="Nombre" required />
+        <select id="editDay" required>
+          <option value="Lunes">Lunes</option>
+          <option value="Martes">Martes</option>
+          <option value="Miércoles">Miércoles</option>
+          <option value="Jueves">Jueves</option>
+          <option value="Viernes">Viernes</option>
+          <option value="Sábado">Sábado</option>
+        </select>
+        <select id="editHour" required>
+          <option value="06:00">06:00</option>
+          <option value="08:00">08:00</option>
+          <option value="10:00">10:00</option>
+          <option value="14:00">14:00</option>
+          <option value="16:00">16:00</option>
+          <option value="18:00">18:00</option>
+          <option value="20:00">20:00</option>
+        </select>
+        <select id="editType" required>
+          <option value="Cumba">Cumba</option>
+          <option value="Cycling">Cycling</option>
+          <option value="Yoga">Yoga</option>
+          <option value="Pilates">Pilates</option>
+          <option value="HIIT">HIIT</option>
+        </select>
+        <button type="submit">Guardar</button>
+        <button type="button" id="cancelEdit">Cancelar</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
